@@ -1,16 +1,19 @@
 const keys = document.querySelectorAll('.key');
 function playNote(event) {
-
   let audioKeyCode = getKeyCode(event);
-  
-  const key = document.querySelector(`[data-key="${audioKeyCode}"]`)
+
+  const key = document.querySelector(`[data-key="${audioKeyCode}"]`);
   const isKeyExists = key;
-  if(!isKeyExists){
+  if (!isKeyExists) {
     const errou = new Audio('sounds/faustao-errou.mp3');
     errou.play();
+  } else {
+    const keySound = document.querySelector(
+      `audio[data-key="${audioKeyCode}"]`
+    );
+    keySound.currentTime = 0;
+    keySound.play();
   }
-  console.log(key);
-  //Se tecla existe
 }
 function getKeyCode(event) {
   let keyCode;
