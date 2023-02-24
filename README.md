@@ -3,5 +3,5 @@
 #### Tecnologias utilizadas:
   - HTML
   - CSS
-  - SCSS (SASS)
+  - SCSS
   - JavaScript
